@@ -14,9 +14,11 @@ body {
   padding: 0;
   min-height: 100vh;
   overflow-x: hidden;
-  cursor: url('../images/cursor-cloud.svg') 8 8, pointer;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 700;
@@ -38,6 +40,109 @@ a:hover {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 1.5rem;
+}
+
+/* Navigation Bar */
+.main-nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(24,28,37,0.92);
+  box-shadow: 0 2px 16px #23263a22;
+  border-bottom: 2px solid #23263a;
+  backdrop-filter: blur(8px) saturate(1.2);
+}
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7em 1.5em;
+}
+.nav-logo {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #38bdf8;
+  letter-spacing: 1.5px;
+  text-shadow: 0 1px 8px #38bdf855;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links {
+  display: flex;
+  gap: 2.2em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links li a {
+  color: #a5b4fc;
+  font-weight: 700;
+  font-size: 1.08rem;
+  letter-spacing: 0.7px;
+  padding: 0.3em 0.7em;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+}
+.nav-links li a:hover, .nav-links li a.active {
+  background: linear-gradient(90deg, #38bdf8 0%, #6366f1 100%);
+  color: #fff;
+  box-shadow: 0 2px 12px #38bdf855;
+}
+.nav-toggle {
+  display: none;
+}
+.nav-toggle-label {
+  display: none;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+}
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: #38bdf8;
+  height: 4px;
+  width: 28px;
+  border-radius: 2px;
+  position: relative;
+  transition: all 0.3s;
+}
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+.nav-toggle-label span::before { top: -9px; }
+.nav-toggle-label span::after { top: 9px; }
+@media (max-width: 900px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(24,28,37,0.98);
+    flex-direction: column;
+    gap: 0;
+    box-shadow: 0 8px 32px #23263a33;
+    border-bottom: 2px solid #23263a;
+    display: none;
+  }
+  .nav-links li { border-bottom: 1px solid #23263a; }
+  .nav-links li:last-child { border-bottom: none; }
+  .nav-toggle:checked + .nav-toggle-label + .nav-links {
+    display: flex;
+  }
+  .nav-toggle-label {
+    display: flex;
+  }
 }
 
 /* Hero Section */
@@ -854,13 +959,27 @@ textarea {
     height: 36px;
   }
   .contact-socials img {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
   }
   .download-resume {
     font-size: 1rem;
     padding: 0.7em 1.3em;
     margin: 1.2rem 0 1rem 0;
+  }
+}
+
+/* Section spacing and grouping */
+section {
+  margin-bottom: 3.5em;
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
+}
+@media (max-width: 600px) {
+  section {
+    margin-bottom: 2em;
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
   }
 }
 
@@ -977,121 +1096,274 @@ textarea {
   }
 }
 
-/* 1. Animated Gradient Border for Profile Photo */
-.hero-photo, .about-photo {
+/* 1. Enhanced Glassmorphism & Depth */
+.about-text, .contact-form, .project-card, .timeline-content {
+  background: rgba(24,28,37,0.92);
+  box-shadow: 0 8px 32px 0 rgba(56,189,248,0.10), 0 2px 12px #23263a33, 0 0 0 1.5px #6366f1cc;
+  backdrop-filter: blur(14px) saturate(1.3);
+  border: 1.5px solid rgba(99,102,241,0.22);
   position: relative;
 }
-.hero-photo::before, .about-photo::before {
+.about-text::after, .contact-form::after, .project-card::after, .timeline-content::after {
   content: '';
   position: absolute;
-  top: -10px; left: -10px; right: -10px; bottom: -10px;
-  border-radius: 50%;
-  background: conic-gradient(from 0deg, #38bdf8, #6366f1, #38bdf8 100%);
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: 0 0 32px 8px #38bdf822 inset;
+  opacity: 0.13;
   z-index: 0;
-  filter: blur(6px) brightness(1.2);
-  opacity: 0.7;
-  animation: borderSpin 4s linear infinite;
 }
-@keyframes borderSpin {
-  0% { filter: hue-rotate(0deg) blur(6px) brightness(1.2); }
-  100% { filter: hue-rotate(360deg) blur(6px) brightness(1.2); }
-}
-.hero-photo img, .about-photo img {
+
+/* 2. Animated Gradient Borders */
+.hero, .about, .resume, .services, .skills, .contact {
   position: relative;
   z-index: 1;
 }
-
-/* 2. Glassmorphism for About and Contact */
-.about-text, .contact-form {
-  background: rgba(24,28,37,0.85);
-  box-shadow: 0 8px 32px 0 rgba(16,19,26,0.25);
-  backdrop-filter: blur(8px) saturate(1.2);
-  border: 1.5px solid rgba(99,102,241,0.18);
+.hero::before, .about::before, .resume::before, .services::before, .skills::before, .contact::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; top: 0; height: 6px;
+  background: linear-gradient(90deg, #38bdf8, #6366f1, #38bdf8 80%);
+  background-size: 200% 100%;
+  animation: borderMove 6s linear infinite;
+  border-radius: 0 0 12px 12px;
+  opacity: 0.18;
+  z-index: 2;
+}
+@keyframes borderMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 200% 0; }
 }
 
-/* 3. Section fade-in on scroll */
-section { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(.77,0,.18,1), transform 0.8s cubic-bezier(.77,0,.18,1); }
-section.visible { opacity: 1; transform: none; }
-
-/* 4. Custom Scrollbar */
-::-webkit-scrollbar { width: 10px; background: #181c25; }
-::-webkit-scrollbar-thumb { background: linear-gradient(120deg, #23263a 0%, #38bdf8 100%); border-radius: 8px; }
-
-/* 5. Scroll-to-top button */
-#scrollTopBtn {
-  position: fixed;
-  bottom: 32px;
-  right: 32px;
-  background: linear-gradient(90deg, #38bdf8 0%, #6366f1 100%);
+/* 3. Typography Polish */
+.section-title {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 2.7rem;
   color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 48px;
+  letter-spacing: 3px;
+  text-shadow: 0 2px 24px #38bdf855, 0 1px 2px #000a;
+  margin-bottom: 2.2em;
+  background: linear-gradient(90deg, #38bdf8 0%, #6366f1 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.resume-heading {
+  font-size: 1.45rem;
+  color: #60a5fa;
+  letter-spacing: 1.2px;
+  margin-bottom: 1.2em;
+}
+
+/* 4. Subtle Motion: Floating SVGs */
+.bg-float {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.13;
+  animation: floatCloud 8s ease-in-out infinite alternate;
+}
+@keyframes floatCloud {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-24px) scale(1.08); }
+}
+
+/* 5. Section SVG Dividers */
+.section-divider {
+  display: block;
+  width: 100%;
   height: 48px;
-  box-shadow: 0 4px 24px #38bdf855;
-  font-size: 2rem;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-  cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
-}
-#scrollTopBtn:hover {
-  background: linear-gradient(90deg, #6366f1 0%, #38bdf8 100%);
-  box-shadow: 0 8px 40px #6366f1cc;
-  transform: scale(1.08);
+  margin: 0;
+  border: none;
+  background: none;
+  position: relative;
+  z-index: 2;
 }
 
-/* Custom Cloud Cursor */
-input, textarea, button, select, a, label {
-  cursor: pointer;
+/* 6. Animated Socials & Buttons */
+.hero-socials a, .btn-primary, .download-resume {
+  transition: box-shadow 0.2s, transform 0.2s, filter 0.2s;
 }
-input[type="text"], input[type="email"], textarea {
-  cursor: text;
+.hero-socials a:hover, .btn-primary:hover, .download-resume:hover {
+  filter: drop-shadow(0 0 8px #38bdf8cc);
+  transform: scale(1.09) rotate(-2deg);
 }
 
-/* Hero Socials */
+/* 7. Contact Form Premium */
+.contact-form {
+  border-radius: 22px;
+  box-shadow: 0 8px 32px #23263a77, 0 2px 12px #23263a33, 0 0 0 2px #38bdf8cc;
+  border: 2px solid #23263a;
+  padding: 2.2em 2em 2em 2em;
+  margin-top: 1.5em;
+}
+.contact-form input, .contact-form textarea {
+  background: rgba(38,50,56,0.7);
+  border: 1.5px solid #38bdf8;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.08rem;
+  padding: 0.8em 1.2em;
+  margin-bottom: 1.2em;
+  box-shadow: 0 1px 6px #23263a22;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+  border: 1.5px solid #6366f1;
+  box-shadow: 0 0 0 2px #6366f1cc;
+  outline: none;
+}
+
+/* 8. Footer Glass & Animation */
+.footer {
+  background: rgba(24,28,37,0.92);
+  box-shadow: 0 -2px 24px #38bdf822;
+  border-top: 2px solid #23263a;
+  text-align: center;
+  padding: 2.2em 0 1.2em 0;
+  font-size: 1.08rem;
+  color: #a5b4fc;
+  position: relative;
+  z-index: 2;
+}
+.footer::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; top: 0; height: 6px;
+  background: linear-gradient(90deg, #38bdf8, #6366f1, #38bdf8 80%);
+  background-size: 200% 100%;
+  animation: borderMove 6s linear infinite;
+  border-radius: 0 0 12px 12px;
+  opacity: 0.18;
+  z-index: 2;
+}
+
+/* 9. Mobile Polish */
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .container { padding: 0 0.5rem; }
+  .about-text, .contact-form, .project-card, .timeline-content {
+    padding: 1.2em 0.7em 1.2em 0.7em;
+    border-radius: 14px;
+  }
+  .section-title { font-size: 2rem; }
+  .btn-primary, .download-resume { font-size: 1rem; padding: 0.7em 1.3em; }
+  .footer { font-size: 0.98rem; padding: 1.2em 0 0.7em 0; }
+}
+
+/* Refined Hero Socials */
 .hero-socials {
   display: flex;
-  gap: 1.2rem;
-  margin-top: 2.2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2.5rem;
   margin-bottom: 0.5rem;
-  justify-content: flex-start;
+  padding: 0.7em 1.2em;
+  background: rgba(24,28,37,0.55);
+  border-radius: 2em;
+  box-shadow: 0 2px 16px 0 rgba(56,189,248,0.10), 0 1px 6px #23263a22;
+  border: 1.5px solid rgba(99,102,241,0.13);
+  width: fit-content;
+  min-width: 220px;
+  position: relative;
+  left: 0;
+  right: 0;
 }
 .hero-socials a {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: rgba(24,28,37,0.85);
-  box-shadow: 0 2px 8px 0 rgba(56,189,248,0.08);
-  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
-  margin-bottom: 0.2rem;
+  background: linear-gradient(120deg, #23263a 60%, #38bdf8 100%);
+  box-shadow: 0 2px 8px 0 rgba(56,189,248,0.10);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.18s;
+  margin-bottom: 0;
+  border: 1.5px solid #23263a;
+  position: relative;
 }
 .hero-socials a:hover, .hero-socials a:focus {
   background: linear-gradient(120deg, #38bdf8 0%, #6366f1 100%);
   box-shadow: 0 4px 16px 0 rgba(99,102,241,0.18);
-  transform: scale(1.08);
+  transform: scale(1.13) rotate(-3deg);
+  border-color: #38bdf8;
+  z-index: 2;
 }
 .hero-socials img {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   display: block;
+  filter: drop-shadow(0 0 2px #23263a88);
+}
+@media (max-width: 900px) {
+  .hero-socials {
+    gap: 1.1rem;
+    padding: 0.5em 0.5em;
+    min-width: 0;
+  }
+  .hero-socials a {
+    width: 40px;
+    height: 40px;
+  }
+  .hero-socials img {
+    width: 22px;
+    height: 22px;
+  }
 }
 @media (max-width: 600px) {
   .hero-socials {
     gap: 0.7rem;
     margin-top: 1.1rem;
+    padding: 0.3em 0.3em;
   }
   .hero-socials a {
     width: 36px;
     height: 36px;
   }
   .hero-socials img {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Scroll to Top Button */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background: rgba(24,28,37,0.85);
+  border: 2.5px solid #38bdf8;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  box-shadow: 0 4px 24px #38bdf855, 0 1px 6px #23263a22;
+  font-size: 2rem;
+  color: #60a5fa;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s, border 0.2s;
+  backdrop-filter: blur(8px) saturate(1.2);
+}
+#scrollTopBtn:hover {
+  background: linear-gradient(90deg, #38bdf8 0%, #6366f1 100%);
+  color: #fff;
+  border-color: #6366f1;
+  box-shadow: 0 8px 40px #6366f1cc, 0 2px 12px #23263a33;
+  transform: scale(1.13) rotate(-6deg);
+}
+@media (max-width: 600px) {
+  #scrollTopBtn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+    bottom: 12px;
+    right: 12px;
   }
 }
