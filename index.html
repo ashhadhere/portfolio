@@ -182,7 +182,7 @@
   <section class="contact" id="contact">
     <div class="container">
       <h2 class="section-title">Contact</h2>
-  <form class="contact-form" id="contactForm" action="https://formspree.io/f/mzzgvola" method="POST" autocomplete="off">
+  <form class="contact-form" id="contactForm" action="https://formspree.io/f/mzzgvola" method="POST" autocomplete="off" novalidate>
         <div class="form-row">
           <div class="form-group">
             <label for="name">Name</label>
@@ -236,24 +236,46 @@
     });
     scrollBtn.onclick = () => window.scrollTo({top:0, behavior:'smooth'});
 
-    // Contact form validation and feedback
-    document.addEventListener('DOMContentLoaded', function() {
-      const form = document.getElementById('contactForm');
-      if (form) {
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          const name = form.name.value.trim();
-          const email = form.email.value.trim();
-          const subject = form.subject.value.trim();
-          const message = form.message.value.trim();
-          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          const valid = name && emailPattern.test(email) && subject && message;
-          document.getElementById('formSuccess').style.display = valid ? 'block' : 'none';
-          document.getElementById('formError').style.display = valid ? 'none' : 'block';
-          if (valid) form.reset();
-        });
+    // Contact form AJAX submission for custom thank you message
+    (function() {
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const subject = form.subject.value.trim();
+      const message = form.message.value.trim();
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const valid = name && emailPattern.test(email) && subject && message;
+      const successMsg = document.getElementById('formSuccess');
+      const errorMsg = document.getElementById('formError');
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+      if (!valid) {
+        errorMsg.style.display = 'block';
+        return;
       }
+      fetch('https://formspree.io/f/mzzgvola', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      })
+      .then(response => {
+        if (response.ok) {
+          successMsg.style.display = 'block';
+          errorMsg.style.display = 'none';
+          form.reset();
+        } else {
+          errorMsg.style.display = 'block';
+        }
+      })
+      .catch(() => {
+        errorMsg.style.display = 'block';
+      });
     });
+  }
+})();
   </script>
 </body>
 </html>
