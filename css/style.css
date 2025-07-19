@@ -282,11 +282,11 @@ a:hover {
 /* Download Resume Button */
 .download-resume {
   display: inline-block;
-  margin: 2.5rem 0 1.5rem 0;
+  margin: 0 !important;
   padding: 0.9em 2.2em;
   font-size: 1.15rem;
   font-weight: 700;
-  border-radius: 2em;
+  border-radius: 1em;
   background: linear-gradient(90deg, #38bdf8 0%, #6366f1 100%);
   color: #fff;
   box-shadow: 0 2px 16px 0 rgba(56,189,248,0.18);
@@ -1366,4 +1366,65 @@ section {
     bottom: 12px;
     right: 12px;
   }
+}
+
+/* --- Hero Button Alignment & Modern Styles --- */
+.hero-buttons {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 2rem !important;
+  margin-top: 2rem !important;
+  margin-bottom: 1.5rem !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+}
+.hero-buttons .btn-primary {
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  padding: 0.9em 2.2em !important;
+  border-radius: 0.75em !important;
+  background: linear-gradient(90deg, #36c3ff 0%, #5f6fff 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s !important;
+  outline: none !important;
+  cursor: pointer !important;
+  margin: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 180px !important;
+  min-height: 48px !important;
+  line-height: 1.2 !important;
+  vertical-align: middle !important;
+  align-self: center !important;
+  box-shadow: none !important;
+}
+.hero-buttons .btn-primary:hover,
+.hero-buttons .btn-primary:focus {
+  background: linear-gradient(90deg, #5f6fff 0%, #36c3ff 100%) !important;
+}
+.hero-buttons .download-resume {
+  background: linear-gradient(90deg, #36c3ff 0%, #6a7cff 100%) !important;
+}
+.hero-buttons .download-resume:hover,
+.hero-buttons .download-resume:focus {
+  background: linear-gradient(90deg, #6a7cff 0%, #36c3ff 100%) !important;
+}
+/* --- HERO BUTTONS FINAL BORDER FIX --- */
+.hero-buttons .btn-primary,
+.hero-buttons .download-resume {
+  border: 2.5px solid #38bdf8 !important;
+}
+.hero-buttons .btn-primary:hover,
+.hero-buttons .download-resume:hover {
+  border-color: #6366f1 !important;
+}
+/* --- HERO BUTTONS FINAL BORDER RADIUS FIX --- */
+.hero-buttons .btn-primary,
+.hero-buttons .download-resume {
+  border-radius: 2em !important;
 }
