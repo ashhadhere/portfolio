@@ -3,301 +3,425 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Syed Muhammad Ashhad Ali | DevOps & Cloud Engineer</title> 
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Inter:400,500,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Syed Muhammad Ashhad Ali - DevOps Engineer portfolio featuring cloud infrastructure, CI/CD automation, and scalable cloud-native systems.">
+  <meta name="theme-color" content="#0f172a">
+  <title>Syed Muhammad Ashhad Ali | DevOps Engineer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="css/revamp.css">
+  <script defer src="js/main.js"></script>
 </head>
 <body>
-  <header class="main-nav">
-    <nav class="nav-container">
-      <a href="#hero" class="nav-logo">Ashhad Ali</a>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-      <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
-      <ul class="nav-links">
+  <div class="bg-orb orb-1" aria-hidden="true"></div>
+  <div class="bg-orb orb-2" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Go to home section">
+        <span class="brand-dot"></span>
+        Ashhad • DevOps
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navMenu">
         <li><a href="#about">About</a></li>
-        <li><a href="#resume">Resume</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a class="btn btn-small" href="resume.pdf" download>Resume</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <img src="images/bg-float-cloud.svg" class="bg-float" style="top:30px;left:-60px;width:120px;" alt=""/>
-    <div class="container hero-content">
-      <div class="hero-text">
-        <h1>Syed Muhammad <span class="accent">Ashhad Ali</span></h1>
-        <h2>DevOps Engineer | AWS | Docker | Jenkins</h2>
-        <p class="hero-tagline">Designing scalable cloud infrastructure, automating deployments, and enabling high-availability systems for the future of tech.</p>
-        <a href="#contact" class="btn-primary">Let’s Connect</a>
-        <a href="resume.pdf" class="btn-primary download-resume" download>Download Resume</a>
-        <div class="hero-socials">
-          <a href="https://www.linkedin.com/in/ashhadali1" target="_blank" aria-label="LinkedIn"><img src="images/linkedin.svg" alt="LinkedIn"></a>
-          <a href="https://github.com/ashhadhere" target="_blank" aria-label="GitHub"><img src="images/github.svg" alt="GitHub"></a>
-          <a href="https://facebook.com/ashhad2002" target="_blank" aria-label="Facebook"><img src="images/facebook.svg" alt="Facebook"></a>
-          <a href="https://instagram.com/ashhadali_" target="_blank" aria-label="Instagram"><img src="images/instagram.svg" alt="Instagram"></a>
-        </div>
-      </div>
-      <div class="hero-photo">
-        <img src="images/user-3.jpg" alt="Ashhad Ali portrait">
-      </div>
-    </div>
-  </section>
-  <svg class="section-divider" viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,24 Q360,48 720,24 T1440,24 V48 H0Z" fill="#23263a" fill-opacity="0.18"/></svg>
+  <main>
+    <section class="hero section" id="home">
+      <div class="container hero-layout">
+        <div class="hero-copy" data-reveal>
+          <h1>Syed Muhammad Ashhad Ali</h1>
+          <p class="hero-role">DevOps Engineer | AWS | GCP | Azure | Docker | CI/CD</p>
+          <p class="lead">
+            Designing scalable cloud infrastructure, automating deployments, and building reliable CI/CD pipelines
+            for modern cloud-native applications.
+          </p>
 
-  <!-- About Section -->
-  <section class="about" id="about">
-    <img src="images/bg-float-cloud.svg" class="bg-float" style="top:60px;right:-80px;width:120px;" alt=""/>
-    <div class="container about-content">
-      <div class="about-photo">
-        <img src="images/user-3.jpg" alt="Ashhad Ali">
-      </div>
-      <div class="about-text">
-        <h2>About Me</h2>
-        <ul class="about-list">
-          <li><strong>Full Name:</strong> Syed Muhammad Ashhad Ali</li>
-          <li><strong>Phone:</strong> +92 347 2710062</li>
-          <li><strong>Email:</strong> ashad.kauser@gmail.com</li>
-          <li><strong>Website:</strong> <a href="https://www.ashhad.tech" target="_blank">www.ashhad.tech</a></li>
-          <li><strong>Location:</strong> Karachi, Pakistan</li>
-        </ul>
-        <div class="about-bio">
-          <h3>Hello There!</h3>
-          <p>I am Syed Muhammad Ashhad Ali, a DevOps Engineer with a strong foundation in cloud computing, automation, and CI/CD. My work focuses on designing scalable infrastructure, streamlining deployment processes, and ensuring high availability of applications through modern DevOps practices.</p>
-          <p>I have hands-on experience with AWS (EC2, RDS, S3, CloudFront, Elastic Beanstalk, ECS), Docker, GitHub Actions, and infrastructure-as-code using CloudFormation. I specialize in VPCs, subnets, backend deployments, and secure access management.</p>
-          <p>My technical skill set includes containerization, blue-green deployments, database migration, and automating workflows for cloud-based applications. I’ve also worked with PostgreSQL, Node.js, .NET, and static frontend deployments using S3 and CloudFront.</p>
-          <p>I am passionate about DevOps culture and practices, always focused on efficiency, reliability, and scalability. I enjoy solving infrastructure challenges and enabling smooth, secure application delivery pipelines. I stay up to date with emerging DevOps tech and strive to bring value through automation, optimization, and collaboration.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <svg class="section-divider" viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,24 Q360,0 720,24 T1440,24 V48 H0Z" fill="#23263a" fill-opacity="0.18"/></svg>
+          <div class="hero-cta">
+            <a class="btn" href="#projects">View My Work</a>
+            <a class="btn btn-ghost" href="resume.pdf" download>Download Resume</a>
+            <a class="btn btn-ghost" href="#contact">Contact Me</a>
+          </div>
 
-  <!-- Resume Section -->
-  <section class="resume" id="resume">
-    <div class="container">
-      <h2 class="section-title">My Resume</h2>
-      <div class="resume-columns">
-        <div class="resume-col">
-          <h3 class="resume-heading">Professional Experience</h3>
-          <div class="timeline">
-            <div class="timeline-block">
-              <div class="timeline-dot work"></div>
-              <div class="timeline-content">
-                <h4>DevOps Engineer</h4>
-                <span class="timeline-company">IFBC</span>
-                <span class="timeline-date">Jan 2025 - Current</span>
-                <p>Managing AWS infrastructure, automating CI/CD pipelines with GitHub Actions, deploying containerized applications using ECS and Elastic Beanstalk, and ensuring secure, scalable cloud environments through infrastructure as code and best DevOps practices.</p>
-              </div>
-            </div>
-            <div class="timeline-block">
-              <div class="timeline-dot work"></div>
-              <div class="timeline-content">
-                <h4>WordPress CMS Manager</h4>
-                <span class="timeline-company">Netcleave</span>
-                <span class="timeline-date">Jan 2023 - Dec 2024</span>
-                <p>Managed the WordPress CMS for product listings, ensuring accuracy and presentation quality. Additionally assisted in basic server-side operations such as WordPress deployment, plugin updates, uptime monitoring, and performance optimization. Collaborated with the tech team to implement automated backup strategies and content version control, gaining early exposure to cloud-hosted environments</p>
-              </div>
-            </div>
+          <ul class="hero-metrics" aria-label="Key professional highlights">
+            <li>
+              <strong>2+ Years</strong>
+              <span>DevOps and cloud operations</span>
+            </li>
+            <li>
+              <strong>Multi-Cloud</strong>
+              <span>AWS, Google Cloud, Azure</span>
+            </li>
+            <li>
+              <strong>Container + CI/CD</strong>
+              <span>Docker, GitHub Actions, IaC</span>
+            </li>
+          </ul>
+
+          <div class="devops-visual" aria-hidden="true">
+            <span>☁️ Cloud</span>
+            <span>⚙️ Pipeline</span>
+            <span>🛡️ Secure Infra</span>
           </div>
         </div>
-        <div class="resume-col">
-          <h3 class="resume-heading">Education</h3>
-          <div class="timeline">
-            <div class="timeline-block">
-              <div class="timeline-dot edu"></div>
-              <div class="timeline-content">
-                <h4>Bachelors Degree</h4>
-                <span class="timeline-company">Mohammad Ali Jinnah University</span>
-                <span class="timeline-date">2022 - 2025</span>
-                <p>I'm pursuing a Bachelor's degree in Computer Science, building a strong foundation in programming, software development, database management, and network security.</p>
-              </div>
-            </div>
-            <div class="timeline-block">
-              <div class="timeline-dot edu"></div>
-              <div class="timeline-content">
-                <h4>Intermediate</h4>
-                <span class="timeline-company">Government National College</span>
-                <span class="timeline-date">2020 - 2021</span>
-                <p>Completed intermediate education in Computer Science, learning programming basics and essential computer science principles.</p>
-              </div>
-            </div>
-            <div class="timeline-block">
-              <div class="timeline-dot edu"></div>
-              <div class="timeline-content">
-                <h4>Matriculation</h4>
-                <span class="timeline-company">Shamsi Society Model School</span>
-                <span class="timeline-date">2012 - 2019</span>
-                <p>Laid the groundwork for my academic journey with a focus on fundamental subjects and a strong educational framework.</p>
-              </div>
-            </div>
+
+        <aside class="hero-card" data-reveal>
+          <div class="avatar-wrap">
+            <img src="images/user-3.jpg" alt="Portrait of Syed Muhammad Ashhad Ali">
           </div>
+          <h2>Syed Muhammad Ashhad Ali</h2>
+          <p>DevOps & Cloud Engineer based in Karachi, Pakistan.</p>
+          <div class="social-links" aria-label="Social profiles">
+            <a href="https://www.linkedin.com/in/ashhadali1" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/ashhadhere" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://facebook.com/ashhad2002" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://instagram.com/ashhadali_" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container section-grid about-grid">
+        <div data-reveal>
+          <p class="eyebrow">About</p>
+          <h2 class="section-title">About Me</h2>
+          <p>
+            I am a DevOps Engineer focused on building scalable, secure, and automated cloud infrastructure. My work
+            revolves around improving deployment speed, system reliability, and operational efficiency through modern
+            DevOps practices.
+          </p>
+          <p>
+            I have hands-on experience working with major cloud providers including AWS, Google Cloud Platform (GCP),
+            and Microsoft Azure. I have deployed production-scale applications across AWS, Azure, and GCP, with a
+            strong focus on infrastructure design, CI/CD pipeline automation, containerization, and cloud-native
+            deployments.
+          </p>
+          <p>
+            I have worked with version control and collaboration platforms including GitHub and Bitbucket, and I build
+            containerized environments using Docker and Docker Compose. I am also comfortable working across multiple
+            Linux distributions such as Ubuntu, Debian, AlmaLinux, and CentOS for server administration, deployments,
+            and troubleshooting.
+          </p>
+          <p>
+            My AWS experience covers services such as EC2, RDS, ECS, ECR, SES, Elastic Beanstalk, Amplify,
+            Lightsail, S3, CloudFront, and VPC configuration. I also work with infrastructure as code using
+            CloudFormation and Terraform, and I support backend systems and databases including PostgreSQL, Node.js,
+            and .NET applications.
+          </p>
+          <p>
+            My focus is always on automation, reliability, security, and scalability. I enjoy designing clean cloud
+            architectures, improving delivery workflows, strengthening observability, and building deployment pipelines
+            that help teams ship software faster and more confidently.
+          </p>
+        </div>
+
+        <div class="glass-panel" data-reveal>
+          <ul class="info-list">
+            <li><span>Full Name</span><strong>Syed Muhammad Ashhad Ali</strong></li>
+            <li><span>Email</span><strong><a href="mailto:ashad.kauser@gmail.com">ashad.kauser@gmail.com</a></strong></li>
+            <li><span>Location</span><strong>Karachi, Pakistan</strong></li>
+            <li><span>Website</span><strong><a href="https://www.ashhad.tech" target="_blank" rel="noopener noreferrer">www.ashhad.tech</a></strong></li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
-  <svg class="section-divider" viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,24 Q360,48 720,24 T1440,24 V48 H0Z" fill="#23263a" fill-opacity="0.18"/></svg>
+    </section>
 
-  <!-- Services Section -->
-  <section class="services" id="services">
-    <div class="container">
-      <h2 class="section-title">My Services</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">⚡</div>
-          <h3>CI/CD</h3>
-          <p>Implementing automated pipelines for building, testing, and deploying applications.</p>
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Career</p>
+          <h2 class="section-title">Professional Experience</h2>
         </div>
-        <div class="service-card">
-          <div class="service-icon">☁️</div>
-          <h3>Cloud Infrastructure Management</h3>
-          <p>Designing, deploying, and managing scalable and reliable cloud infrastructure using AWS, Azure, or Google Cloud.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🐳</div>
-          <h3>Containerization & Orchestration</h3>
-          <p>Utilizing Docker and Kubernetes to containerize applications and automate their deployment, scaling, and management.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🛠️</div>
-          <h3>Infrastructure as Code (IaC)</h3>
-          <p>Writing infrastructure code using tools like Terraform or CloudFormation to automate provisioning and management of infrastructure resources.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">📈</div>
-          <h3>Monitoring & Logging</h3>
-          <p>Setting up monitoring tools (e.g., Prometheus, Grafana) and centralized logging (e.g., ELK stack) to ensure high availability and performance.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🔒</div>
-          <h3>Security Automation</h3>
-          <p>Implementing security best practices through automated vulnerability scanning, compliance checks, and incident response automation.</p>
+
+        <div class="timeline" data-reveal>
+          <article>
+            <h3>DevOps Engineer – GreenSign</h3>
+            <p class="meta">Sep 2025 – Current</p>
+            <ul class="bullet-list">
+              <li>Manage and maintain cloud infrastructure across AWS, GCP, and Azure.</li>
+              <li>Design and automate CI/CD pipelines.</li>
+              <li>Deploy and manage containerized applications using Docker.</li>
+              <li>Implement infrastructure as code and automated deployment workflows.</li>
+              <li>Monitor performance and ensure high availability of services.</li>
+              <li>Optimize cloud resources for performance and cost efficiency.</li>
+            </ul>
+          </article>
+
+          <article>
+            <h3>DevOps Engineer – IFBC</h3>
+            <p class="meta">Jan 2025 – Sep 2025</p>
+            <ul class="bullet-list">
+              <li>Managed AWS infrastructure including EC2, RDS, S3, and CloudFront.</li>
+              <li>Built CI/CD pipelines using GitHub Actions.</li>
+              <li>Deployed containerized services with ECS and Elastic Beanstalk.</li>
+              <li>Designed VPC networks, subnets, and secure access management.</li>
+              <li>Automated infrastructure using CloudFormation.</li>
+            </ul>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
-  <svg class="section-divider" viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,24 Q360,0 720,24 T1440,24 V48 H0Z" fill="#23263a" fill-opacity="0.18"/></svg>
+    </section>
 
-  <!-- Skills Section -->
-  <section class="skills" id="skills">
-    <div class="container">
-      <h2 class="section-title">Skills</h2>
-      <div class="skills-list">
-        <div class="skill-item"><span>Python</span><div class="skill-bar"><div class="skill-level" style="width:60%"></div></div></div>
-        <div class="skill-item"><span>C++</span><div class="skill-bar"><div class="skill-level" style="width:50%"></div></div></div>
-        <div class="skill-item"><span>Web Dev</span><div class="skill-bar"><div class="skill-level" style="width:50%"></div></div></div>
-        <div class="skill-item"><span>Docker</span><div class="skill-bar"><div class="skill-level" style="width:80%"></div></div></div>
-        <div class="skill-item"><span>AWS</span><div class="skill-bar"><div class="skill-level" style="width:70%"></div></div></div>
-        <div class="skill-item"><span>Azure</span><div class="skill-bar"><div class="skill-level" style="width:30%"></div></div></div>
-        <div class="skill-item"><span>Git</span><div class="skill-bar"><div class="skill-level" style="width:80%"></div></div></div>
-        <div class="skill-item"><span>SQL</span><div class="skill-bar"><div class="skill-level" style="width:70%"></div></div></div>
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Academic</p>
+          <h2 class="section-title">Education</h2>
+        </div>
+
+        <div class="cards education-cards">
+          <article class="card" data-reveal>
+            <span class="tag">2022 – 2025</span>
+            <h3>Bachelor’s Degree – Computer Science</h3>
+            <p>Mohammad Ali Jinnah University</p>
+          </article>
+
+          <article class="card" data-reveal>
+            <span class="tag">2020 – 2021</span>
+            <h3>Intermediate – Computer Science</h3>
+            <p>Government National College</p>
+          </article>
+
+          <article class="card" data-reveal>
+            <span class="tag">2012 – 2019</span>
+            <h3>Matriculation</h3>
+            <p>Shamsi Society Model School</p>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
-  <svg class="section-divider" viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,24 Q360,48 720,24 T1440,24 V48 H0Z" fill="#23263a" fill-opacity="0.18"/></svg>
+    </section>
 
-  <!-- Contact Section -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <h2 class="section-title">Contact</h2>
-  <form class="contact-form" id="contactForm" action="https://formspree.io/f/mzzgvola" method="POST" autocomplete="off" novalidate>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-          </div>
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Offerings</p>
+          <h2 class="section-title">Services</h2>
+          <p class="section-subtitle">High-impact DevOps services for modern product teams.</p>
         </div>
-        <div class="form-group">
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn-primary">Send Message</button>
-        <div id="formSuccess" class="form-feedback success" style="display:none;">Thank you! Your message was sent successfully.</div>
-        <div id="formError" class="form-feedback error" style="display:none;">Oops! Please fill all fields correctly.</div>
-      </form>
-    </div>
-  </section>
 
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 S.M Ashhad Ali. All Rights Reserved.</p>
+        <div class="cards services-cards">
+          <article class="card" data-reveal>
+            <h3>CI/CD Pipeline Automation</h3>
+            <p>Automating build, test, and deployment pipelines for faster software delivery.</p>
+          </article>
+          <article class="card" data-reveal>
+            <h3>Cloud Infrastructure Engineering</h3>
+            <p>Designing and managing scalable infrastructure on AWS, Azure, and Google Cloud.</p>
+          </article>
+          <article class="card" data-reveal>
+            <h3>Containerization & Microservices</h3>
+            <p>Building and deploying containerized applications using Docker.</p>
+          </article>
+          <article class="card" data-reveal>
+            <h3>Infrastructure as Code</h3>
+            <p>Automating infrastructure provisioning using tools like CloudFormation or Terraform.</p>
+          </article>
+          <article class="card" data-reveal>
+            <h3>Monitoring & Observability</h3>
+            <p>Implementing monitoring and logging solutions for reliability and performance.</p>
+          </article>
+          <article class="card" data-reveal>
+            <h3>DevOps Security</h3>
+            <p>Applying DevSecOps practices including secure access management and automated checks.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Toolbox</p>
+          <h2 class="section-title">Skills</h2>
+        </div>
+
+        <div class="skills-grid">
+          <article class="card" data-reveal>
+            <h3>Cloud Platforms</h3>
+            <div class="pill-list">
+              <span>Amazon Web Services</span>
+              <span>Google Cloud Platform</span>
+              <span>Microsoft Azure</span>
+              <span>Oracle Cloud</span>
+            </div>
+          </article>
+
+          <article class="card" data-reveal>
+            <h3>DevOps Tools</h3>
+            <div class="pill-list">
+              <span>Docker</span>
+              <span>Kubernetes</span>
+              <span>Jenkins</span>
+              <span>GitHub Actions</span>
+              <span>Bitbucket</span>
+              <span>Terraform</span>
+              <span>CloudFormation</span>
+              <span>Ansible</span>
+            </div>
+          </article>
+
+          <article class="card" data-reveal>
+            <h3>AWS Services</h3>
+            <div class="pill-list">
+              <span>EC2</span>
+              <span>RDS</span>
+              <span>ECS</span>
+              <span>ECR</span>
+              <span>SES</span>
+              <span>Elastic Beanstalk</span>
+              <span>VPC</span>
+            </div>
+          </article>
+
+          <article class="card" data-reveal>
+            <h3>Programming & Development</h3>
+            <div class="pill-list">
+              <span>Python</span>
+              <span>C++</span>
+              <span>Node.js</span>
+              <span>.NET</span>
+            </div>
+          </article>
+
+          <article class="card" data-reveal>
+            <h3>Databases</h3>
+            <div class="pill-list">
+              <span>SQL</span>
+              <span>PostgreSQL</span>
+              <span>MongoDB</span>
+            </div>
+          </article>
+
+          <article class="card" data-reveal>
+            <h3>Other</h3>
+            <div class="pill-list">
+              <span>Git</span>
+              <span>Linux</span>
+              <span>Ubuntu</span>
+              <span>Debian</span>
+              <span>AlmaLinux</span>
+              <span>CentOS</span>
+              <span>Networking</span>
+              <span>Web Development</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Portfolio</p>
+          <h2 class="section-title">Project Highlights</h2>
+          <p class="section-subtitle">Representative DevOps work focused on performance, resilience, and deployment speed.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card" data-reveal>
+            <span class="tag">AWS • GitHub Actions</span>
+            <h3>Production Deployment Pipeline</h3>
+            <p>Automated build, test, and deployment process using GitHub Actions and containerized release stages.</p>
+            <ul>
+              <li>Reduced manual deployment overhead</li>
+              <li>Enabled safer release rollbacks</li>
+            </ul>
+          </article>
+
+          <article class="card" data-reveal>
+            <span class="tag">Docker • ECS • Beanstalk</span>
+            <h3>Containerized App Infrastructure</h3>
+            <p>Designed scalable environments with Docker and AWS ECS for consistent deployments across environments.</p>
+            <ul>
+              <li>Improved release consistency</li>
+              <li>Faster provisioning and scaling</li>
+            </ul>
+          </article>
+
+          <article class="card" data-reveal>
+            <span class="tag">VPC • Security • Reliability</span>
+            <h3>High-Availability Cloud Stack</h3>
+            <p>Configured cloud networking, secure access policies, monitoring, and availability-focused deployment patterns.</p>
+            <ul>
+              <li>Secure VPC and subnet architecture</li>
+              <li>Optimized traffic distribution</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container section-grid contact-grid">
+        <div data-reveal>
+          <p class="eyebrow">Contact</p>
+          <h2 class="section-title">Let’s build something reliable together.</h2>
+          <p>
+            I’m open to full-time opportunities and freelance projects. Share your requirements and I will get back to you.
+          </p>
+          <ul class="contact-details">
+            <li>Email: <a href="mailto:ashad.kauser@gmail.com">ashad.kauser@gmail.com</a></li>
+          </ul>
+        </div>
+
+        <form class="contact-form glass-panel" id="contactForm" action="https://formspree.io/f/mzzgvola" method="POST" autocomplete="on" novalidate data-reveal>
+          <div class="form-row">
+            <label>
+              Full Name
+              <input type="text" name="name" required placeholder="Your name">
+            </label>
+            <label>
+              Email Address
+              <input type="email" name="email" required placeholder="you@example.com">
+            </label>
+          </div>
+          <label>
+            Subject
+            <input type="text" name="subject" required placeholder="How can I help?">
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="5" required placeholder="Tell me about your project"></textarea>
+          </label>
+          <button class="btn" type="submit">Send Message</button>
+          <p class="form-feedback" id="formFeedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-layout">
+      <p>© 2026 Syed Muhammad Ashhad Ali<br>All Rights Reserved</p>
+      <ul>
+        <li><a href="https://github.com/ashhadhere" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/ashhadali1" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://facebook.com/ashhad2002" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+        <li><a href="https://instagram.com/ashhadali_" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="mailto:ashad.kauser@gmail.com">Email</a></li>
+      </ul>
     </div>
   </footer>
 
-  <button id="scrollTopBtn" title="Go to top">↑</button>
-  <script>
-    // Section fade-in on scroll
-    const sections = document.querySelectorAll('section');
-    const revealSection = () => {
-      const trigger = window.innerHeight * 0.92;
-      sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
-        if (top < trigger) sec.classList.add('visible');
-      });
-    };
-    window.addEventListener('scroll', revealSection);
-    window.addEventListener('DOMContentLoaded', revealSection);
-
-    // Scroll-to-top button
-    const scrollBtn = document.getElementById('scrollTopBtn');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) scrollBtn.style.display = 'flex';
-      else scrollBtn.style.display = 'none';
-    });
-    scrollBtn.onclick = () => window.scrollTo({top:0, behavior:'smooth'});
-
-    // Contact form AJAX submission for custom thank you message
-    (function() {
-  const form = document.getElementById('contactForm');
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const subject = form.subject.value.trim();
-      const message = form.message.value.trim();
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      const valid = name && emailPattern.test(email) && subject && message;
-      const successMsg = document.getElementById('formSuccess');
-      const errorMsg = document.getElementById('formError');
-      successMsg.style.display = 'none';
-      errorMsg.style.display = 'none';
-      if (!valid) {
-        errorMsg.style.display = 'block';
-        return;
-      }
-      fetch('https://formspree.io/f/mzzgvola', {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: new FormData(form)
-      })
-      .then(response => {
-        if (response.ok) {
-          successMsg.style.display = 'block';
-          errorMsg.style.display = 'none';
-          form.reset();
-        } else {
-          errorMsg.style.display = 'block';
-        }
-      })
-      .catch(() => {
-        errorMsg.style.display = 'block';
-      });
-    });
-  }
-})();
-  </script>
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll back to top">↑</button>
 </body>
 </html>
